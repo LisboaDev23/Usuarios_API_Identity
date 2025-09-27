@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UsuariosApi.Data.Dtos;
+using UsuariosApi.Models;
+using UsuariosApi.Services.Interfaces;
 
 namespace UsuariosApi.Controllers;
 
@@ -7,10 +9,18 @@ namespace UsuariosApi.Controllers;
 [Route("[controller]")]
 public class UsuarioController : ControllerBase
 {
-    [HttpGet("cadastrar")]
-    public IActionResult CadastrarUsuario([FromBody] CreateUsuarioDto usuario)
-    {
+    private IUsuarioService _usuarioService;
 
-        return Ok("Usuário cadastrado com sucesso!");
+    public UsuarioController(IUsuarioService usuarioService)
+    {
+        _usuarioService = usuarioService;
+    }
+
+    [HttpPost("cadastrar")]
+    public async Task<IActionResult> CadastrarUsuario([FromBody] CreateUsuarioDto usuarioDto)
+    {
+        Usuario usuario = await _usuarioService.CadastrarUsuario(usuarioDto);
+
+        return CreatedAtAction(nameof(CadastrarUsuario), usuario.Id ,usuario);
     }
 }
