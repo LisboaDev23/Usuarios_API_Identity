@@ -1,47 +1,86 @@
-# Build results
+```
+## Compilação
 bin/
 obj/
+[Bb]uild/
+[Ll]og/
 
-# User-specific files
-*.user
+## Usuário específico
+*.rsuser
 *.suo
+*.user
 *.userosscache
 *.sln.docstates
 
-# VS Code workspace settings
+## IDEs
 .vscode/
+.idea/
 
-# Visual Studio cache folders
+## Sistema
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+## Cache do Visual Studio
 .vs/
-.vsconfig
-
-# ASP.NET Core secrets
-secrets.json
-
-# IIS Express
-*.vspscc
-*.vssscc
 *.dbmdl
-*.pfx
-*.publishsettings
-*.applicationhost.config
+*.bak
+*.backup
+*.log
 
-# NuGet packages
+## Configurações de usuário
+*.userprefs
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Arquivos de publicação
+*.publishsettings
+*.pubxml
+*.pubxml.user
+
+## pacotes NuGet
 *.nupkg
 *.snupkg
 *.nuspec
-*.psmdcp
-project.lock.json
-project.nuget.cache
-*.dgspec.json
+packages/
+!packages/build/
+*.nuget.props
+*.nuget.targets
 
-# Logs
+## Logs
 *.log
+*.tlog
 
-# Web assets
-wwwroot/node_modules/
-wwwroot/lib/
+## Testes
+TestResult*/
+[Bb]enchmarkDotNet.Artifacts/
+*.coverage
+*.coveragexml
+*.trx
 
-# Others
-*.DS_Store
-Thumbs.db
+## Ferramentas
+*.pidb
+*.svclog
+*.scc
+
+## DotNet
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Configuração local
+appsettings.Development.json
+secrets.json
+
+## Docker
+**/docker-compose.override.yml
+
+## Outros
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+```

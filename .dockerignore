@@ -1,0 +1,47 @@
+# Arquivos e pastas ocultas e de configuração
+.classpath
+.dockerignore
+.env
+.git
+.gitignore
+.project
+.settings
+.toolstarget
+.vs
+.vscode
+
+# Arquivos de projeto específicos do usuário
+*.csproj.user
+*.dbmdl
+*.jfm
+
+# Arquivos e pastas de configuração do Azure Dev Spaces
+azds.yaml
+
+# Pastas de build
+bin/
+obj/
+
+# Helm charts e arquivos de configuração sensíveis
+charts/
+secrets.dev.yaml
+values.dev.yaml
+
+# Arquivos relacionados ao Docker
+docker-compose*
+Dockerfile*
+
+# Dependências do Node.js
+node_modules/
+npm-debug.log
+
+# Arquivos de documentação
+LICENSE
+README.md
+
+# Exceções para manter certos arquivos do Git
+!.gitignore
+!.git/HEAD
+!.git/config
+!.git/packed-refs
+!.git/refs/heads/**
