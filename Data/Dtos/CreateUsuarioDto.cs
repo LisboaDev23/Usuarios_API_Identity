@@ -5,7 +5,7 @@ namespace UsuariosApi.Data.Dtos;
 public class CreateUsuarioDto
 {
     [Required(ErrorMessage = "O campo Nome é obrigatório")]
-    public string Nome { get; set; }
+    public string Username { get; set; }
 
     [Required(ErrorMessage = "O campo data de nascimento é obrigatório")]
     public DateTime DataNascimento { get; set; }
@@ -16,5 +16,5 @@ public class CreateUsuarioDto
 
     [Required]
     [Compare("Password")]
-    public string ConfirmPassword { get; set; }
+    public string RePassword { get; set; }
 }
