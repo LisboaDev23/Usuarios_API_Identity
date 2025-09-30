@@ -23,4 +23,11 @@ public class UsuarioController : ControllerBase
 
         return CreatedAtAction(nameof(CadastrarUsuario), usuario.Id ,usuario);
     }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] UsuarioLoginDto usuarioLogin)
+    {
+        string token = await _usuarioService.Login(usuarioLogin);
+        return Ok(token);
+    }
 }
