@@ -16,7 +16,8 @@ public class TokenService : ITokenService
             new("username", usuario.UserName),
             new("id", usuario.Id),
             new(ClaimTypes.DateOfBirth,
-            usuario.DataNascimento.ToString())
+            usuario.DataNascimento.ToString()),
+            new("loginTimestamp", DateTime.UtcNow.ToString())
         };
 
         var chave = new SymmetricSecurityKey(Encoding.UTF8
