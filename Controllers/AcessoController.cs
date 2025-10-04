@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace UsuariosApi.Controllers
 {
     [ApiController]
-    [Route("[controller")]
+    [Route("[controller]")]
     public class AcessoController : ControllerBase
     {
         [HttpGet]

@@ -8,13 +8,14 @@ using Microsoft.IdentityModel.Tokens;
 using UsuariosApi.Authorization;
 using UsuariosApi.Data;
 using UsuariosApi.Models;
+using UsuariosApi.Services;
 using UsuariosApi.Services.Behaviours;
 using UsuariosApi.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("UsuarioConnection");
+var connectionString = builder.Configuration["ConnectionStrings:UsuarioConnection"];
 
 builder.Services.AddDbContext<UsuarioDbContext>(options =>
     options
@@ -42,7 +43,9 @@ builder.Services.AddAuthentication(options =>
     {
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
-            .GetBytes("SD4FS54DT8WR4F524TERT")),
+            .GetBytes(
+            builder.Configuration["SymetricSecurityKey"]
+            )),
         ValidateAudience = false,
         ValidateIssuer = false,
         ClockSkew = TimeSpan.Zero
